@@ -4,26 +4,22 @@ class QuantumCipher
 {
     static void Main()
     {
-        // Original message to be encrypted
-        string originalMessage = "Hello, Quantum World!";
+// to be merged
+        string originalMessage = "abcdef";
 
-        // Perform Classical Encryption
         string classicalEncryptedMessage = ClassicalEncrypt(originalMessage);
         Console.WriteLine($"Classical Encrypted Message: {classicalEncryptedMessage}");
 
-        // Perform Quantum Key Distribution
         string quantumKey = QuantumKeyDistribution();
         Console.WriteLine($"Quantum Key: {quantumKey}");
 
-        // Combine Classical and Quantum Encryption
         string finalEncryptedMessage = CombineEncryptions(classicalEncryptedMessage, quantumKey);
         Console.WriteLine($"Final Encrypted Message: {finalEncryptedMessage}");
     }
 
     static string ClassicalEncrypt(string message)
     {
-        // Placeholder for a classical encryption algorithm (e.g., AES)
-        // For simplicity, we'll just reverse the message here
+
         char[] charArray = message.ToCharArray();
         Array.Reverse(charArray);
         return new string(charArray);
@@ -31,11 +27,9 @@ class QuantumCipher
 
     static string QuantumKeyDistribution()
     {
-        // Simulate quantum key distribution (QKD)
-        // In a real scenario, this involves quantum communication and entanglement
-        // For simplicity, we'll use a random key for this simulation
+
         Random random = new Random();
-        int keyLength = 16; // Assume a key length of 16 for this example
+        int keyLength = 16;
         char[] key = new char[keyLength];
 
         for (int i = 0; i < keyLength; i++)
@@ -48,8 +42,6 @@ class QuantumCipher
 
     static string CombineEncryptions(string classicalEncryptedMessage, string quantumKey)
     {
-        // Combine classical and quantum encryption
-        // For simplicity, we'll XOR each character of the classical encryption with the quantum key
         char[] classicalEncryptedArray = classicalEncryptedMessage.ToCharArray();
         char[] quantumKeyArray = quantumKey.ToCharArray();
 
